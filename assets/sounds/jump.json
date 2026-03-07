@@ -1,0 +1,7 @@
+{
+  "oscillator": "sine",
+  "pattern": [
+    { "freq": 440, "time": 0.0, "duration": 0.1, "gain": 0.3 },
+    { "freq": 660, "time": 0.1, "duration": 0.1, "gain": 0.25 }
+  ]
+}
