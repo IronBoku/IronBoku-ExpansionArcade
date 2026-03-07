@@ -1,69 +1,212 @@
-/* Reset */
+/* Reset dasar */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body dengan background realistik */
 body {
-  font-family: 'Arial', sans-serif;
-  background: url('assets/images/arcade-room.jpg') no-repeat center center fixed;
-  background-size: cover;
+  font-family: 'Press Start 2P', cursive;
+  background: #111;
   color: #fff;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Background arcade room */
+.arcade-background {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url('assets/images/arcade-room.jpg') no-repeat center center;
+  background-size: cover;
+  filter: brightness(0.4) blur(2px);
+  z-index: -1;
 }
 
 /* Header */
 header {
-  background: rgba(0,0,0,0.7);
   padding: 20px;
-  text-align: center;
-  border-bottom: 4px solid #ffcc00;
 }
-
 header h1 {
-  font-size: 2.5em;
+  font-size: 2em;
   color: #ffcc00;
-  text-shadow: 2px 2px 5px #000;
+  text-shadow: 0 0 10px #ff0;
 }
 
-header p {
-  font-size: 1.2em;
-  color: #ddd;
-}
-
-/* Grid Arcade */
-.arcade-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-  gap: 20px;
-  padding: 40px;
-}
-
-.arcade-grid a {
-  display: block;
-  background: rgba(255,255,255,0.1);
-  border: 2px solid #ffcc00;
-  border-radius: 10px;
+/* Panel kayu */
+.arcade-panel {
+  background: url('assets/images/panel-wood.jpg') no-repeat center center;
+  background-size: cover;
+  border: 4px solid #333;
+  border-radius: 12px;
   padding: 20px;
-  text-align: center;
-  font-size: 1.2em;
-  color: #fff;
-  text-decoration: none;
-  transition: transform 0.2s, background 0.3s;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 1000px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.7);
 }
 
-.arcade-grid a:hover {
-  background: rgba(255,255,255,0.3);
-  transform: scale(1.05);
-  box-shadow: 0 0 15px #ffcc00;
+.arcade-panel h2 {
+  margin-bottom: 15px;
+  color: #fff;
+  text-shadow: 0 0 5px #000;
+}
+
+.arcade-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Tombol arcade */
+.arcade-button {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border: 3px solid #000;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.arcade-button.red { background: url('assets/images/button-red.jpg') no-repeat center/cover; }
+.arcade-button.blue { background: url('assets/images/button-blue.jpg') no-repeat center/cover; }
+.arcade-button.green { background: url('assets/images/button-green.jpg') no-repeat center/cover; }
+.arcade-button.yellow { background: url('assets/images/button-yellow.jpg') no-repeat center/cover; }
+.arcade-button.purple { background: url('assets/images/button-purple.jpg') no-repeat center/cover; }
+
+.arcade-button:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 25px #ffcc00;
+}
+
+/* Monitor arcade */
+.arcade-monitor {
+  display: inline-block;
+  padding: 20px;
+  background: url('assets/images/monitor-frame.jpg') no-repeat center center;
+  background-size: cover;
+  border: 6px solid #222;
+  border-radius: 12px;
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.8), 0 0 25px #000;
+  position: relative;
+  margin: 20px auto;
+}
+
+.arcade-monitor canvas {
+  display: block;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border: 4px solid #000;
+  border-radius: 8px;
+  background: #000;
+  box-shadow: inset 0 0 20px rgba(0,255,0,0.3);
+}
+
+/* Efek scanline CRT */
+.arcade-monitor::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: repeating-linear-gradient(
+    rgba(0,0,0,0.1) 0px,
+    rgba(0,0,0,0.1) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  pointer-events: none;
+}
+
+/* Speaker grill */
+.arcade-speaker {
+  width: 200px;
+  height: 100px;
+  background: url('assets/images/speaker-grill.jpg') no-repeat center center;
+  background-size: cover;
+  border: 3px solid #111;
+  border-radius: 8px;
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.7), 0 0 10px #000;
+  margin: 20px auto;
+  position: relative;
+}
+
+.arcade-speaker::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: radial-gradient(circle, rgba(0,0,0,0.4) 2px, transparent 2px);
+  background-size: 10px 10px;
+  pointer-events: none;
+}
+
+/* Lampu neon */
+.arcade-neon {
+  width: 100%;
+  height: 20px;
+  background: linear-gradient(90deg, #00f, #0ff, #f0f, #ff0);
+  border-radius: 10px;
+  box-shadow: 
+    0 0 10px #0ff,
+    0 0 20px #0ff,
+    0 0 40px #0ff;
+  margin: 20px 0;
+  animation: neonPulse 2s infinite alternate;
+}
+
+.arcade-neon.blue {
+  background: #00f;
+  box-shadow: 
+    0 0 10px #00f,
+    0 0 20px #00f,
+    0 0 40px #00f;
+}
+
+.arcade-neon.purple {
+  background: #a0f;
+  box-shadow: 
+    0 0 10px #a0f,
+    0 0 20px #a0f,
+    0 0 40px #a0f;
+}
+
+/* Animasi neon */
+@keyframes neonPulse {
+  from { opacity: 0.7; }
+  to { opacity: 1; }
 }
 
 /* Footer */
 footer {
-  background: rgba(0,0,0,0.7);
-  text-align: center;
-  padding: 15px;
-  border-top: 4px solid #ffcc00;
-  color: #aaa;
+  padding: 10px;
+}
+footer p {
+  margin: 10px 0;
+  font-size: 0.8em;
+  color: #ccc;
+}
+
+/* Responsif */
+@media (max-width: 600px) {
+  .arcade-button {
+    width: 60px;
+    height: 60px;
+  }
+  header h1 {
+    font-size: 1.5em;
+  }
+  .arcade-panel {
+    width: 95%;
+  }
+  .arcade-monitor canvas {
+    max-width: 100%;
+  }
 }
