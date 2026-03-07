@@ -2,30 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Arcade Expansion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arcade Hub</title>
+  <!-- Font retro arcade -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Header dengan lampu neon -->
   <header>
-    <h1>Arcade Expansion Hub</h1>
-    <p>Selamat datang di arcade klasik versi 3D RTX!</p>
+    <h1>Arcade Hub</h1>
+    <div class="arcade-neon blue"></div>
   </header>
 
   <main>
-    <div class="arcade-grid">
-      <a href="games/snake3d/snake.html">🐍 Snake 3D</a>
-      <a href="games/pacman3d/pacman.html">👻 Pac-Man 3D</a>
-      <a href="games/dino3d/dino.html">🦖 Dino Runner 3D</a>
-      <a href="games/tetris3d/tetris.html">🧩 Tetris 3D</a>
-      <a href="games/flappy3d/flappy.html">🐦 Flappy Bird 3D</a>
-      <a href="games/chess3d/chess.html">♟️ Chess 3D</a>
-      <a href="games/spaceinvaders3d/space.html">🚀 Space Invaders 3D</a>
-      <!-- Tambahkan link game lain -->
-    </div>
+    <!-- Panel kayu berisi tombol arcade -->
+    <section class="arcade-panel">
+      <h2>Pilih Game</h2>
+      <div class="arcade-grid">
+        <a href="games/flappy3d/flappy.html" class="arcade-button red" title="Flappy Bird 3D"></a>
+        <a href="games/pacman/pacman.html" class="arcade-button blue" title="Pac-Man 3D"></a>
+        <a href="games/spaceinvaders/invaders.html" class="arcade-button green" title="Space Invaders 3D"></a>
+        <a href="games/breakout/breakout.html" class="arcade-button yellow" title="Breakout 3D"></a>
+      </div>
+    </section>
+
+    <!-- Monitor arcade untuk menampilkan game -->
+    <section class="arcade-monitor">
+      <canvas id="gameCanvas" width="800" height="600"></canvas>
+    </section>
+
+    <!-- Speaker grill arcade -->
+    <section class="arcade-speaker"></section>
   </main>
 
+  <!-- Footer dengan lampu neon -->
   <footer>
-    <p>© 2026 IronGaming54 Arcade Expansion</p>
+    <div class="arcade-neon purple"></div>
+    <p>© 2026 IronGaming54 Arcade</p>
   </footer>
+
+  <!-- Script audio & interaksi -->
+  <script src="script.js"></script>
 </body>
 </html>
