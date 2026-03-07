@@ -1,0 +1,9 @@
+{
+  "oscillator": "square",
+  "pattern": [
+    { "freq": 440, "time": 0.0, "duration": 0.2, "gain": 0.25 },
+    { "freq": 660, "time": 0.2, "duration": 0.2, "gain": 0.25 },
+    { "freq": 880, "time": 0.4, "duration": 0.3, "gain": 0.3 },
+    { "freq": 990, "time": 0.7, "duration": 0.4, "gain": 0.3 }
+  ]
+}
