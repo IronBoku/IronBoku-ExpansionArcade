@@ -1,0 +1,69 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body dengan background realistik */
+body {
+  font-family: 'Arial', sans-serif;
+  background: url('assets/images/arcade-room.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+}
+
+/* Header */
+header {
+  background: rgba(0,0,0,0.7);
+  padding: 20px;
+  text-align: center;
+  border-bottom: 4px solid #ffcc00;
+}
+
+header h1 {
+  font-size: 2.5em;
+  color: #ffcc00;
+  text-shadow: 2px 2px 5px #000;
+}
+
+header p {
+  font-size: 1.2em;
+  color: #ddd;
+}
+
+/* Grid Arcade */
+.arcade-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+.arcade-grid a {
+  display: block;
+  background: rgba(255,255,255,0.1);
+  border: 2px solid #ffcc00;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.2em;
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.arcade-grid a:hover {
+  background: rgba(255,255,255,0.3);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #ffcc00;
+}
+
+/* Footer */
+footer {
+  background: rgba(0,0,0,0.7);
+  text-align: center;
+  padding: 15px;
+  border-top: 4px solid #ffcc00;
+  color: #aaa;
+}
