@@ -1,0 +1,26 @@
+{
+  "oscillator": "triangle",
+  "tempo": 120,
+  "pattern": [
+    { "freq": 440, "time": 0.0, "duration": 0.25, "gain": 0.2 },
+    { "freq": 550, "time": 0.25, "duration": 0.25, "gain": 0.2 },
+    { "freq": 660, "time": 0.5, "duration": 0.25, "gain": 0.2 },
+    { "freq": 550, "time": 0.75, "duration": 0.25, "gain": 0.2 },
+
+    { "freq": 440, "time": 1.0, "duration": 0.25, "gain": 0.2 },
+    { "freq": 550, "time": 1.25, "duration": 0.25, "gain": 0.2 },
+    { "freq": 660, "time": 1.5, "duration": 0.25, "gain": 0.2 },
+    { "freq": 880, "time": 1.75, "duration": 0.25, "gain": 0.2 },
+
+    { "freq": 660, "time": 2.0, "duration": 0.25, "gain": 0.2 },
+    { "freq": 550, "time": 2.25, "duration": 0.25, "gain": 0.2 },
+    { "freq": 440, "time": 2.5, "duration": 0.25, "gain": 0.2 },
+    { "freq": 550, "time": 2.75, "duration": 0.25, "gain": 0.2 },
+
+    { "freq": 660, "time": 3.0, "duration": 0.25, "gain": 0.2 },
+    { "freq": 880, "time": 3.25, "duration": 0.25, "gain": 0.2 },
+    { "freq": 990, "time": 3.5, "duration": 0.25, "gain": 0.2 },
+    { "freq": 880, "time": 3.75, "duration": 0.25, "gain": 0.2 }
+  ],
+  "loop": true
+}
